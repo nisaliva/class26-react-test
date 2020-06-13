@@ -1,7 +1,13 @@
 import React from "react";
+import './App.css';
+import User from './components/User'
 
 function App() {
-  return <div>Good luck dear students!</div>;
+  return (
+    <div className='App'>
+      <User/>
+    </div>
+  )
 }
 
 export default App;

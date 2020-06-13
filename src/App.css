@@ -1,0 +1,38 @@
+.App {
+    text-align: center;
+}
+
+.btn {
+    cursor: pointer;
+    width: 130px;
+    color: black;
+    margin: 30px;
+    font-size: 1rem;
+}
+
+.firstLi {
+    font-size: 2rem;
+    font-weight: bold;
+    text-decoration: underline;
+    margin: 4%;
+}
+
+li {
+    margin: 2%;
+}
+
+h3 {
+    cursor: pointer;
+}
+
+h3:hover {
+    margin-left: 42%;
+    margin-right: 42%;
+    background-color: gray;
+}
+
+img {
+    width: 200px;
+    border: 1px solid crimson;
+    padding: 5px;
+}
