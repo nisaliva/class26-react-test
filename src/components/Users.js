@@ -1,31 +1,28 @@
-import React, {useState, useEffect} from 'react';
+import React, {useState} from 'react';
 import UserProfile from './UserProfile';
 import Button from './Button'
 
-const User = () => {
+const Users = () => {
     const [users, setUsers] = useState([]);
     const [user, setUser] = useState({});
     const [showUser, setShowUser] = useState(false);
-    const [isLoading, setLoading] = useState(true);
+    const [isLoading, setLoading] = useState(false);
     const [hasError, setError] = useState(false);
 
-    const getUsers = () => {
-        fetch('https://randomuser.me/api/?results=5')
-        .then((response) => response.json())
-        .then((data) => {
-            setUsers(data.results)
-            setLoading(false)
-            setShowUser(false)
-        })
-        .catch((e) =>{
-            setError(true)
-            setLoading(false)
-        })
-    }
-
-    useEffect(() => {
-        getUsers()
-    }, [])
+    async function getUsers() {
+        setLoading(true);
+        const url = "https://randomuser.me/api/?results=5";
+	
+		try {
+			const res = await fetch(url);
+			const data = await res.json();
+			setUsers(data.results);
+		} catch (error) {
+			setError(true);
+		} finally {
+			setLoading(false);
+		}
+	}
 
     return (
         <div>
@@ -52,4 +49,4 @@ const User = () => {
     )
 }
 
-export default User
+export default Users
