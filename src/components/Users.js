@@ -8,21 +8,22 @@ const Users = () => {
     const [showUser, setShowUser] = useState(false);
     const [isLoading, setLoading] = useState(false);
     const [hasError, setError] = useState(false);
-
+    
     async function getUsers() {
         setLoading(true);
         const url = "https://randomuser.me/api/?results=5";
-	
-		try {
-			const res = await fetch(url);
-			const data = await res.json();
-			setUsers(data.results);
-		} catch (error) {
-			setError(true);
-		} finally {
-			setLoading(false);
-		}
-	}
+
+        try {
+            const res = await fetch(url);
+            const data =- await res.json();
+            setUsers(data.results);
+        } catch (error) {
+            setError(true);
+        }finally {
+            setLoading(false);
+        }
+
+    }
 
     return (
         <div>
