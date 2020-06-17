@@ -1,5 +1,6 @@
 import React from 'react'
 
+
 const UserProfile = ({user}) => {
     const {name, location, email, phone, picture } = user;
     const {city, country} = location;
